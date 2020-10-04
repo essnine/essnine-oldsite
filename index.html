@@ -14,22 +14,43 @@
     <script src="/script.js" defer></script>
   </head>  
   <body>
-    <h1>Hi there!</h1>
-    
-    <p>
-      I am Suraj Zala. I code in primarily in Python, but have a base level of experience in Bash, JS, and C++.
-      I've dabbled in PWAs built with Ionic in college, and have generally done a fair bit of server setup on Linux machines.
-      
-    </p>
-
-    <p>
-      This is a basic website.
-      I do know some front-end work, but I'm not very keen on form before function.
-    </p>
-
+    <div style="align-items: center;">   
+      <div class="flex-container" style="display: flex; width: 80%; margin: 10% 0 0 12%; flex-direction: column; text-align: left; align-items: center;">
+        <div class-"flex-item">
+        <p>
+        Hi there!
+        <br /><br />
+        My name's Suraj. I code in primarily in Python, but have a base level of experience in Bash, JS, and C++.<br />
+        I've dabbled in PWAs built with Ionic in college, and have generally done a fair bit of server setup on Linux machines.<br />
+        <br /><br />
+        I like working on backend services. Over the past few years, I've worked on: <br />
+        </p>
+        </div>
+        <div class="flex-item">
+        <ul>
+          <li> a real-time customer service chat backend using socketio</li>
+          <li>NLP management functionalities built on top of services like DialogFlow</li>
+          <li>generic RESTful APIs on Flask and Django</li>
+          <li>automating/scheduling tasks using cron</li>
+          <li>basic CI/CD pipelines using Jenkins</li>
+          <li>general utilties using bash scripting</li>
+        </ul>
+        </div>
+      </div>
+    </div>
     <!-- include the Glitch button to show what the webpage is about and
           to make it easier for folks to view source and remix -->
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
     <script src="https://button.glitch.me/button.js" defer></script>
   </body>
+  <footer>
+    <div class="flex-container" style="display: flex; position: absolute; width: 100%; bottom: 0; text-align: center; align-items: center;">
+      <div class="flex-item"> 
+      <p style="text-align: center;">
+        This is a basic website.
+        I do know some front-end work, but I'm not very keen on form before function.
+      </p>
+      </div>
+    </div>
+  </footer>
 </html>
