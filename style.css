@@ -1,5 +1,8 @@
 #root {
   max-width: 1200px;
+  --primary-color: #fff;
+  --background-color: #e5e5e5;
+  --text-color: #2d2d2d;
   /* margin: 0 auto; */
 }
 
@@ -95,5 +98,14 @@
 .fa:hover {
     color: darken(dark-gray, 25%);
     transition: color 0.3s ease-in;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    max-width: 1200px;
+    --primary-color: #455363;
+    --background-color: #1f2935;
+    --text-color: #fff;
   }
 }
