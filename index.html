@@ -8,47 +8,47 @@
     <title>Hello, World!</title>
     
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
     
     <!-- import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
+    <script src="script.js" defer></script>
   </head>  
   <body>
-    <div style="align-items: center;">   
-      <div class="flex-container" style="display: flex; width: 80%; margin: 10% 0 0 12%; flex-direction: column; text-align: left; align-items: center;">
+    <div class="parentBody">   
+      <div class="flex-container mainBody">
         <div class-"flex-item">
         <p>
-        Hi there!
-        <br /><br />
-        My name's Suraj. I code in primarily in Python, but have a base level of experience in Bash, JS, and C++.<br />
-        I've dabbled in PWAs built with Ionic in college, and have generally done a fair bit of server setup on Linux machines.<br />
-        <br /><br />
-        I like working on backend services. Over the past few years, I've worked on: <br />
+          Hi there!
+          <br /><br />
+          My name's Suraj. I code in primarily in Python, but have a base level of experience in Bash, JS, and C++.<br />
+          I've dabbled in PWAs built with Ionic in college, and have generally done a fair bit of server setup on Linux machines.<br />
+          <br /><br />
+          I like working on backend services. Over the past few years, I've worked on:
+          <div class="flex-item">
+            <ul>
+              <li>a real-time customer service chat backend using socketio</li>
+              <li>an enterprise chatbot solution built on the same backend</li>
+              <li>NLP management functionalities built on top of services like DialogFlow</li>
+              <li>generic RESTful APIs on Flask and Django</li>
+              <li>automating/scheduling tasks with cron</li>
+              <li>basic CI/CD pipelines using Jenkins</li>
+              <li>general utilties using bash scripting</li>
+            </ul>
+          </div>
+          This list will keep expanding as time passes. I don't have a lot more to say about me professionally.<br />
+          In the meantime, if you'd like to know more about me, I blog <a href="https://blog.surajz.codes" target="_blank">here</a>. <br />
+          You can also <a href="mailto:surajzala12@gmail.com">write</a> to me.<br />
+          Have a good day!
         </p>
-        </div>
-        <div class="flex-item">
-        <ul>
-          <li> a real-time customer service chat backend using socketio</li>
-          <li>NLP management functionalities built on top of services like DialogFlow</li>
-          <li>generic RESTful APIs on Flask and Django</li>
-          <li>automating/scheduling tasks using cron</li>
-          <li>basic CI/CD pipelines using Jenkins</li>
-          <li>general utilties using bash scripting</li>
-        </ul>
-        </div>
       </div>
     </div>
-    <!-- include the Glitch button to show what the webpage is about and
-          to make it easier for folks to view source and remix -->
-    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-    <script src="https://button.glitch.me/button.js" defer></script>
+  </div>
   </body>
   <footer>
-    <div class="flex-container" style="display: flex; position: absolute; width: 100%; bottom: 0; text-align: center; align-items: center;">
+    <div class="flex-container footerBox">
       <div class="flex-item"> 
-      <p style="text-align: center;">
-        This is a basic website.
-        I do know some front-end work, but I'm not very keen on form before function.
+      <p id="footerText">
+        This is a basic website. Nothing fancy, just getting it done.
       </p>
       </div>
     </div>

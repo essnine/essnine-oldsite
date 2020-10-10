@@ -1,26 +1,54 @@
 #root {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 1rem;
+  border: 1px solid gray;
+}
+
+@media screen and (min-width: 600px) {
   .card {
-    margin: 1rem;
-    border: 1px solid gray;
+    flex: 1 1 calc(50% - 2rem);
   }
-  
-  @media screen and (min-width: 600px) {
-    .card {
-      flex: 1 1 calc(50% - 2rem);
-    }
+}
+
+@media screen and (min-width: 900px) {
+  .card {
+    flex: 1 1 calc(33% - 2rem);
   }
-  
-  @media screen and (min-width: 900px) {
-    .card {
-      flex: 1 1 calc(33% - 2rem);
-    }
-  }
+}
+
+.parentBody {
+  align-items: center;
+  justify-content: center;
+}
+
+.mainBody {
+  display: flex;
+  width: 80%;
+  margin: 10% 0 0 12%;
+  flex-direction: column;
+  text-align: left;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerBox {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+  justify-content: center;
+}
+
+#footerText {
+  text-align: center;
+}
