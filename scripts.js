@@ -130,3 +130,15 @@ function goDark() {
     var footerElement = document.getElementById("footerSocialBox");
     footerElement.classList.toggle("dark-mode");
 }
+
+function checkTime() {
+    var now = new Date();
+    hours = now.getHours();
+    console.log(hours);
+    console.log(typeof(hours))
+    if (hours<7 || hours>19){
+        goDark();
+        toggleButton = document.getElementById("goDarkToggle");
+        toggleButton.checked = true;
+    }
+}

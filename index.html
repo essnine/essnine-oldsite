@@ -14,7 +14,7 @@
     <!-- import the webpage's javascript file -->
     <script src="scripts.js" defer></script>
   </head>  
-  <body>
+  <body onload="checkTime();">
     <div class="parentBody" id="parentBody">   
       <div class="flex-container mainBody" id="mainBody">
         <div class-"flex-item" id="mainBodyDiv">
@@ -70,7 +70,7 @@
             🌙&nbsp
           </label>
           <label class="switch">
-            <input type="checkbox" onclick="goDark()">
+            <input type="checkbox" onclick="goDark()" id="goDarkToggle">
             <span class="slider round"></span>
           </label>
         </div>
