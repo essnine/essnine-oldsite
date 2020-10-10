@@ -119,3 +119,14 @@ function userIn() {
 
 
 /* This is where the fun ends */
+
+function goDark() {
+    var bodyElement = document.body;
+    bodyElement.classList.toggle("dark-mode");
+
+    var footerElement = document.getElementById("mainBody");
+    footerElement.classList.toggle("dark-mode");
+
+    var footerElement = document.getElementById("footerSocialBox");
+    footerElement.classList.toggle("dark-mode");
+}

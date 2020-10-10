@@ -12,11 +12,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- import the webpage's javascript file -->
-    <script src="script.js" defer></script>
+    <script src="scripts.js" defer></script>
   </head>  
   <body>
-    <div class="parentBody">   
-      <div class="flex-container mainBody">
+    <div class="parentBody" id="parentBody">   
+      <div class="flex-container mainBody" id="mainBody">
         <div class-"flex-item" id="mainBodyDiv">
         <p>
           Hi there!
@@ -46,22 +46,35 @@
     </div>
   </div>
   </body>
-  <footer>
-    <div class="flex-container footerBox">
-      <!-- <div class="flex-item footerText">         
-      <p id="footerText">
-        This is a basic website. Nothing fancy, just getting it done.
-      </p>
-      </div> -->
-      <div class="flex-item faviconSocial">
-        <a href="https://twitter.com/surajzala?lang=en" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <footer class="footer" id="footer">
+    <div class="flex-container footerMaster" id="footerMaster">
+      <div class="flex-container footerSocialBox" id="footerSocialBox">
+        <!-- <div class="flex-item footerText">         
+        <p id="footerText">
+          This is a basic website. Nothing fancy, just getting it done.
+        </p>
+        </div> -->
+        <!-- <div class="flex-item faviconSocial"> -->
+          <a class="faviconLink" href="https://twitter.com/surajzala?lang=en" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <!-- </div> -->
+        <!-- <div class="flex-item faviconSocial"> -->
+          <a class="faviconLink" href="https://surajzcodes.tumblr.com/" target="_blank"><i class="fa fa-tumblr" aria-hidden="true"></i></a>
+        <!-- </div><div class="flex-item faviconSocial"> -->
+          <a class="faviconLink" href="https://github.com/szala12" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+        <!-- </div> -->
+      
       </div>
-      <div class="flex-item faviconSocial">
-        <a href="https://surajzcodes.tumblr.com/" target="_blank"><i class="fa fa-tumblr" aria-hidden="true"></i></a>
-      </div><div class="flex-item faviconSocial">
-        <a href="https://github.com/szala12" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+      <div class="flex-container footerDarkMode">
+        <div class="flex-item toggleDarkMode">
+          <label class="toggleDarkText">
+            🌙&nbsp
+          </label>
+          <label class="switch">
+            <input type="checkbox" onclick="goDark()">
+            <span class="slider round"></span>
+          </label>
+        </div>
       </div>
-    
     </div>
   </footer>
 </html>
