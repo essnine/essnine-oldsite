@@ -1,6 +1,6 @@
 #root {
   max-width: 1200px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 .container {
@@ -26,8 +26,8 @@
 }
 
 .parentBody {
-  align-items: center;
   justify-content: center;
+  margin-right: 1em;
 }
 
 .mainBody {
@@ -38,6 +38,7 @@
   text-align: left;
   align-items: center;
   justify-content: center;
+  margin-bottom: 5em;
 }
 
 .footerBox {
