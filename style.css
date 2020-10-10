@@ -48,6 +48,17 @@
   margin-bottom: 5em;
 }
 
+.footerInfoBox {
+  position: fixed;
+  padding: 1em 0.5em;
+  justify-content: left;
+  display: flex;
+  float: left;
+  font-size: 13px;
+  color: white;
+  height: 50px;
+}
+
 .footerMaster {
   display: flex;
   flex-direction: row;
