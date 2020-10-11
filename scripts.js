@@ -140,3 +140,22 @@ function checkTime() {
         toggleButton.checked = true;
     }
 }
+
+function getAffirmation() {
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://www.affirmations.dev', true);
+    xhr.setRequestHeader('Accept','application/json');
+    
+    xhr.send();
+    xhr.onload = function () {
+        if (xhr.status != 200) { // analyze HTTP status of the response
+            console.log(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found
+        } else { // show the result
+            console.log(`Done, got ${xhr.response.length} bytes`); // response is the server
+            resultObject = xhr.response.json();
+            console.log(resultObject);
+            resultText = resultObject.affirmation;
+            console.log(resultText);
+        }
+    }
+}
