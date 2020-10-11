@@ -77,7 +77,6 @@ function getRandomInt(max) {
   }
 
 function setAffirmation() {
-    // console.log("hello");
     affirmationIndex = affirmations.length;
     affirmationText = affirmations[getRandomInt(affirmationIndex)];
     console.log(affirmationText);
