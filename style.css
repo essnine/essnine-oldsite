@@ -40,6 +40,7 @@
 body {
   background-image: url(img/pattern.svg);
   background-size: 350px 175px;
+  background-color: white;
 }
 
 .mainBody {
@@ -175,7 +176,7 @@ a {
 body.dark-mode {
   background-image: url(img/pattern-inverted.svg);
   background-size: 350px 175px;
-  background-color: white;
+  background-color: #1D1D1D;
 }
 
 /* The switch - the box around the slider */
