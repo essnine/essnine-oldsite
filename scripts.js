@@ -142,7 +142,7 @@ function goDark() {
 }
 
 function checkTime() {
-    if (isDarkOut()){
+    if (isDarkOut() === true){
         goDark();
         toggleButton = document.getElementById("goDarkToggle");
         toggleButton.checked = true;
