@@ -120,6 +120,19 @@ function userIn() {
 
 /* This is where the fun ends */
 
+var activeNight = false
+
+function isDarkOut(){
+    var now = new Date();
+    hours = now.getHours();
+    if (hours<7 || hours>19){
+        return true;
+        activeNight = true
+    } else {
+        return false;
+    }
+}
+
 function goDark() {
     var bodyElement = document.body;
     bodyElement.classList.toggle("dark-mode");
@@ -129,14 +142,19 @@ function goDark() {
 
     var footerElement = document.getElementById("footerSocialBox");
     footerElement.classList.toggle("dark-mode");
+    
+    // I had to do this the manual way because the damn toggle would just not work
+    if (isDarkOut() || activeNight){
+        console.log(document.body.classList.remove("dark-mode"));
+        activeNight = false
+    } else {
+        document.body.classList.add("dark-mode");
+        activeNight = true
+    }
 }
 
 function checkTime() {
-    var now = new Date();
-    hours = now.getHours();
-    console.log(hours);
-    console.log(typeof(hours))
-    if (hours<7 || hours>19){
+    if (isDarkOut()){
         goDark();
         toggleButton = document.getElementById("goDarkToggle");
         toggleButton.checked = true;

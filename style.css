@@ -37,6 +37,11 @@
   color: black;
 }
 
+body {
+  background-image: url(img/pattern.svg);
+  background-size: 350px 175px;
+}
+
 .mainBody {
   display: flex;
   width: 80%;
@@ -46,6 +51,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 5em;
+  background-color: rgba(255, 255, 255, 0.95);
 }
 
 .footerInfoBox {
@@ -140,7 +146,7 @@
 
 
 .dark-mode {
-  background-color: #15202B;
+  background-color: rgba(28, 28, 28, 0.95);
   color: white;
   border-top-color: white;
 }
@@ -164,6 +170,12 @@ a {
   padding: 1em 0.5em;
   right: 0;
   justify-content: right;
+}
+
+body.dark-mode {
+  background-image: url(img/pattern-inverted.svg);
+  background-size: 350px 175px;
+  background-color: white;
 }
 
 /* The switch - the box around the slider */
