@@ -120,16 +120,6 @@ function userIn() {
 
 /* This is where the fun ends */
 
-function isDarkOut(){
-    var now = new Date();
-    hours = now.getHours();
-    if (hours<7 || hours>19){
-        return true;
-    } else {
-        return false;
-    }
-}
-
 function goDark() {
     var bodyElement = document.body;
     bodyElement.classList.toggle("dark-mode");
@@ -142,7 +132,9 @@ function goDark() {
 }
 
 function checkTime() {
-    if (isDarkOut() === true){
+    var now = new Date();
+    hours = now.getHours();
+    if (hours<7 || hours>19){
         goDark();
         toggleButton = document.getElementById("goDarkToggle");
         toggleButton.checked = true;
