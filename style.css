@@ -41,6 +41,7 @@ body {
   background-image: url(img/pattern.svg);
   background-size: 350px 175px;
   background-color: white;
+  background-position: right;
 }
 
 .mainBody {
