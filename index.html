@@ -10,10 +10,11 @@
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/8bit-wonder" type="text/css"/>
     <!-- import the webpage's javascript file -->
     <script src="scripts.js" defer></script>
   </head>  
-  <body onload="checkTime();" class="">
+  <body onload="initPage();" class="">
     <div class="parentBody" id="parentBody">   
       <div class="flex-container mainBody" id="mainBody">
         <div class-"flex-item" id="mainBodyDiv">
@@ -45,7 +46,7 @@
         </p>
       </div>
       <div>
-        <p class="affirmationBox">loading...</p>
+        <p class="affirmationBox" id="affirmationBox" >loading...</p>
       </div>
     </div>
   </div>
@@ -81,5 +82,4 @@
       </div>
     </div>
   </footer>
-  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/8bit-wonder" type="text/css" onload="getAffirmation();"/>
 </html>

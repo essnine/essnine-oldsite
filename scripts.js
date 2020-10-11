@@ -1,124 +1,52 @@
-var botui = new BotUI('api-bot');
-
-
-
-/* Fingers crossed this works or else this night is fucked */
-function getDFresponse(res) {
-    // Create a request variable and assign a new XMLHttpRequest object to it.
-
-    var request = new XMLHttpRequest();
-
-    var session = 12345
-
-    console.log("res is " + res.value)
-
-    //var res = "Hello"
-
-    request.onload = function (res) {
-        // Process our return data
-        if (request.status >= 200 && request.status < 300) {
-            // This will run when the request is successful
-            console.log('success!', request);
-        } else {
-            // This will run when it's not
-            console.log('The request failed!');
-        }
-
-        // This will run either way
-        // All three of these are optional, depending on what you're trying to do
-        console.log('This always runs...');
-
-
-        // Begin accessing JSON data here
-        var data = (this.response);
-
-        // console.log("this is a response" + this.response);
-        // console.log("this is the data" + data);
-
-
-        socketResponse(data);
-        //const app = document.getElementById('msgResp');
-        //const root = document.getElementById('root');
-        /*
-        root.onload = function () {
-            app.textContent = data;
-        */
-    }
-
-
-    // Open a new connection, using the GET request on the URL endpoint
-    request.open('GET', 'https://api.dialogflow.com/v1/query?v=20150910&lang=en&query=' + res.value + "&sessionId=" + session, true);
-
-    request.setRequestHeader("Authorization", "Bearer 6e9a8c31260d49b48fe5287a8c807655");
-
-    // Send request
-    data = request.send();
-
-}
-
-
-/* End Dialogflow fuckery */
-
-
-
-botui.message.add({
-    content: "Hi! I'm Rheobot!",
-    delay: 1500,
-}).then(function () {
-    botui.action.button({
-        action: [{ // show only one button
-                text: 'What can you do?',
-                value: 'What can you do?'
-            },
-        ]
-    }).then(function (res) {
-        getDFresponse(res)
-    })
-});
-
-/* This is where the fun begins */
-
-function socketResponse(res) {
-
-    var resp = JSON.parse(res);
-
-    console.log(resp.result); // will print whatever was typed in the field.
-
-    console.log("Response is " + ((resp)));
-    var msgResp = resp.result.fulfillment.messages;
-    resultList = []
-
-    msgResp.forEach(function myFunction(item, index) {
-        console.log(msgResp[index].speech);
-        resultList.push(msgResp[index].speech);
-    });
-
-    resultList.forEach(function (item, index, array) {
-        console.log(item, index);
-        botui.message.add({
-            content: item,
-            delay: 500,
-        }).then(userIn());
-    })
-};
-
-function userIn() {
-    botui.action.text({
-        action: {
-            placeholder: 'Say something',
-        }
-    }).then(function (res) {
-        getDFresponse(res)
-    })
-}
-
-// botui.message.add({
-//   content: '',
-//   delay: 1500,
-// }).then(userIn());
-
-
-/* This is where the fun ends */
+const affirmations = [
+    "You got this",
+    "You'll figure it out",
+    "You're a smart cookie",
+    "I believe in you",
+    "Sucking at something is the first step towards being good at something",
+    "Struggling is part of learning",
+    "Everything has cracks - that's how the light gets in",
+    "Mistakes don't make you less capable",
+    "We are all works in progress",
+    "You are a capable human",
+    "You know more than you think",
+    "10x engineers are a myth",
+    "If everything was easy you'd be bored",
+    "I admire you for taking this on",
+    "You're resourceful and clever",
+    "You'll find a way",
+    "I know you'll sort it out",
+    "Struggling means you're learning",
+    "You're doing a great job",
+    "It'll feel magical when it's working",
+    "I'm rooting for you",
+    "Your mind is full of brilliant ideas",
+    "You make a difference in the world by simply existing in it",
+    "You are learning valuable lessons from yourself every day",
+    "You are worthy and deserving of respect",
+    "You know more than you knew yesterday",
+    "You're an inspiration",
+    "Your life is already a miracle of chance waiting for you to shape its destiny",
+    "Your life is about to be incredible",
+    "Nothing is impossible. The word itself says 'I’m possible!'",
+    "Failure is just another way to learn how to do something right",
+    "I give myself permission to do what is right for me",
+    "You can do it",
+    "It is not a sprint, it is a marathon. One step at a time",
+    "Success is the progressive realization of a worthy goal",
+    "People with goals succeed because they know where they’re going",
+    "All you need is the plan, the roadmap, and the courage to press on to your destination",
+    "The opposite of courage in our society is not cowardice... it is conformity",
+    "Whenever we’re afraid, it’s because we don’t know enough. If we understood enough, we would never be afraid",
+    "The past does not equal the future",
+    "The path to success is to take massive, determined action",
+    "It’s what you practice in private that you will be rewarded for in public",
+    "Small progress is still progress",
+    "Don't worry if you find flaws in your past creations, it's because you've evolved",
+    "Starting is the most difficult step - but you can do it",
+    "Don't forget to enjoy the journey",
+    "It's not a mistake, it's a learning opportunity",
+];
 
 function goDark() {
     var bodyElement = document.body;
@@ -129,33 +57,34 @@ function goDark() {
 
     var footerElement = document.getElementById("footerSocialBox");
     footerElement.classList.toggle("dark-mode");
+
+    var affirmationElement = document.getElementById("affirmationBox");
+    affirmationElement.classList.toggle("dark-mode");
 }
 
 function checkTime() {
     var now = new Date();
     hours = now.getHours();
-    if (hours<7 || hours>19){
+    if (hours < 7 || hours > 19) {
         goDark();
         toggleButton = document.getElementById("goDarkToggle");
         toggleButton.checked = true;
     }
 }
 
-function getAffirmation() {
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', 'https://www.affirmations.dev', true);
-    xhr.setRequestHeader('Accept','application/json');
-    
-    xhr.send();
-    xhr.onload = function () {
-        if (xhr.status != 200) { // analyze HTTP status of the response
-            console.log(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found
-        } else { // show the result
-            console.log(`Done, got ${xhr.response.length} bytes`); // response is the server
-            resultObject = xhr.response.json();
-            console.log(resultObject);
-            resultText = resultObject.affirmation;
-            console.log(resultText);
-        }
-    }
+function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+
+function setAffirmation() {
+    // console.log("hello");
+    affirmationIndex = affirmations.length;
+    affirmationText = affirmations[getRandomInt(affirmationIndex)];
+    console.log(affirmationText);
+    document.getElementById("affirmationBox").innerText = affirmationText
+}
+
+function initPage() {
+    setAffirmation();
+    checkTime();
 }

@@ -119,11 +119,19 @@ body {
   font-family: '8BITWONDERNominal';
   font-weight: normal;
   font-style: normal;
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.95);
   font-size: 14px;
   padding: 0em 1em 0em 1em;
+  text-align: center;
+}
 
+.affirmationBox.dark-mode {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.95);
+  font-size: 14px;
+  padding: 0em 1em 0em 1em;
+  text-align: center;
 }
 
 #footerText {
