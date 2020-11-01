@@ -48,7 +48,10 @@ const affirmations = [
     "It's not a mistake, it's a learning opportunity",
 ];
 
-function goDark() {
+var isDay = false;
+var darkMode = false;
+
+function goDark(setInMemory=false) {
     var bodyElement = document.body;
     bodyElement.classList.toggle("dark-mode");
 
@@ -60,15 +63,69 @@ function goDark() {
 
     var affirmationElement = document.getElementById("affirmationBox");
     affirmationElement.classList.toggle("dark-mode");
+
+    
+    if (setInMemory == true){
+        if (affirmationElement.classList.contains("dark-mode")){
+            darkMode = true;
+        } else {
+            darkMode = false;
+        }
+    localStorage.setItem("darkMode", JSON.stringify(darkMode));
+    localStorage.setItem("manualSetting", JSON.stringify(true));   
+    }
 }
 
-function checkTime() {
+// alright so I've forgotten a major amount of the work I did here
+// so, I might try to document it once I go through all the code
+// (and get it working too, obvsly)
+
+function checkStorageForConfig() {
+    if (typeof(Storage) !== "undefined") {
+        // Code for localStorage/sessionStorage.
+        var configDarkMode = JSON.parse(localStorage.getItem("darkMode"));
+        var configManualSetting = JSON.parse(localStorage.getItem("manualSetting"));
+
+        console.table(
+            {
+                'configDarkMode': configDarkMode,
+                'configManualSetting': configManualSetting,
+                'darkMode': darkMode
+            }
+        )
+
+        if (configManualSetting == true) {
+            if (configDarkMode != darkMode) {
+                goDark();
+                toggleButton = document.getElementById("goDarkToggle");
+                toggleButton.checked = true;
+                localStorage.setItem("darkMode", true);
+                localStorage.setItem("lastCheckAtDay", true);
+                localStorage.setItem("manualSetting", true);
+            }
+        }
+
+      } else {
+        // Sorry! No Web Storage support..
+        darkModeCheck();
+      }
+}
+
+function darkModeCheck() {
     var now = new Date();
     hours = now.getHours();
     if (hours < 7 || hours > 19) {
         goDark();
+        isDay = false
         toggleButton = document.getElementById("goDarkToggle");
         toggleButton.checked = true;
+        localStorage.setItem("darkMode", true);
+        localStorage.setItem("lastCheckAtDay", false);
+        localStorage.setItem("manualSetting", false);
+    } else {
+        localStorage.setItem("darkMode", false);
+        localStorage.setItem("lastCheckAtDay", true);
+        localStorage.setItem("manualSetting", false);
     }
 }
 
@@ -79,11 +136,12 @@ function getRandomInt(max) {
 function setAffirmation() {
     affirmationIndex = affirmations.length;
     affirmationText = affirmations[getRandomInt(affirmationIndex)];
-    console.log(affirmationText);
+    // console.log(affirmationText);
     document.getElementById("affirmationBox").innerText = affirmationText
 }
 
 function initPage() {
     setAffirmation();
-    checkTime();
+    checkStorageForConfig();
+    // darkModeCheck();
 }
