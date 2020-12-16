@@ -63,7 +63,6 @@ function goDark(setInMemory=false) {
 
     var affirmationElement = document.getElementById("affirmationBox");
     affirmationElement.classList.toggle("dark-mode");
-
     
     if (setInMemory == true){
         if (affirmationElement.classList.contains("dark-mode")){
@@ -82,10 +81,11 @@ function goDark(setInMemory=false) {
 
 function checkStorageForConfig() {
     if (typeof(Storage) !== "undefined") {
-        // Code for localStorage/sessionStorage.
+        // Code for checking localStorage/sessionStorage availability.
         var configDarkMode = JSON.parse(localStorage.getItem("darkMode"));
         var configManualSetting = JSON.parse(localStorage.getItem("manualSetting"));
 
+        // logging it here
         console.table(
             {
                 'configDarkMode': configDarkMode,
@@ -103,6 +103,9 @@ function checkStorageForConfig() {
                 localStorage.setItem("lastCheckAtDay", true);
                 localStorage.setItem("manualSetting", true);
             }
+        } else {
+            // Sorry! No Web Storage support..
+            darkModeCheck();
         }
 
       } else {
