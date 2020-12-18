@@ -55,7 +55,7 @@ function goDark(setInMemory=false) {
     var bodyElement = document.body;
     bodyElement.classList.toggle("dark-mode");
 
-    var footerElement = document.getElementById("mainBody");
+    var footerElement = document.getElementById("mainBodyDiv");
     footerElement.classList.toggle("dark-mode");
 
     var footerElement = document.getElementById("footerSocialBox");

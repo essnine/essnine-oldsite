@@ -152,6 +152,10 @@ body {
   text-align: center;
 }
 
+#mainBodyDiv.dark-mode {
+  background-color: rgba(28, 28, 28, 0.9);
+  }
+
 #footerText {
   text-align: center;
 }
