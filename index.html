@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/8bit-wonder" type="text/css"/>
     <!-- import the webpage's javascript file -->
-    <script src="scripts.js" defer></script>
+    <script type="text/javascript" src="scripts.js" defer></script>
   </head>  
   <body onload="initPage();" class="">
     <div class="parentBody" id="parentBody">   
@@ -73,8 +73,8 @@
       </div>
       <div class="flex-container footerDarkMode">
         <div class="flex-item toggleDarkMode" title="I store no cookies. The night mode toggle is basic JS time checking. This site is mostly built from scratch.">
-          <label class="toggleDarkText">
-            🌙&nbsp
+          <label class="toggleDarkText" id="toggleButtonLabel">
+            🌞&nbsp
           </label>
           <label class="switch">
             <input type="checkbox" onclick="goDark(true)" id="goDarkToggle">
