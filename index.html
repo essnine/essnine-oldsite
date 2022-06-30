@@ -7,12 +7,7 @@
     <link rel="icon" type="image/png" href="img/favicon.png"/>
 
     <title>Hello, World!</title>
-    
-    <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/8bit-wonder" type="text/css"/>
-    <!-- import the webpage's javascript file -->
+
     <script type="text/javascript" src="scripts.js" defer></script>
   </head>  
   <body onload="initPage();" class="">
@@ -22,29 +17,31 @@
         <p>
           Hi there!
           <br /><br />
-          I'm Suraj. I've been working primarily with Python since mid-2018, have an intermediate level of experience in Bash and JS,
-          and some basic experience in C++. I've also dabbled in PWAs built with Ionic while I was in college,
-          and have worked on a fair few Linux server setups over the past six years.
+          I'm Suraj. I'm a software engineer, primarily working in Python since 2018.
           <br /><br />
-          I like working on backend services. Over the past few years, I've worked on:
+          I'm a backend engineer. Over the past few years, I've worked on:
           <div class="flex-item">
             <ul>
               <li>a real-time customer service chat backend using socketio</li>
               <li>an enterprise chatbot solution built on the same backend</li>
               <li>NLP management functionalities built on top of services like DialogFlow</li>
-              <li>generic RESTful APIs on Flask and Django</li>
+              <li>generic RESTful APIs on Flask, FastAPI and Django</li>
               <li>automating/scheduling tasks with cron, and other linux-y stuff</li>
-              <li>basic CI/CD pipelines using Jenkins</li>
-              <li>general utilties using bash scripting</li>
+              <li>more automation retrofitted to an existing large-scale document-processing system</li>
+              <li>development and maintenance on a rule-based decision engine for a well-known FinTech corp</li>
+              <li>general tinkering with shell, protocols, all sorts of tidbits and tooling</li>
+              <li>training and mentoring padawans new to programming professionally</li>
             </ul>
           </div>
+          Not to say that I don't like the notion of working in front-end, just that it's not a priority for me at the moment.
+          I mean. Look at this website. Right?</ br>
           Besides programming, I like to keep up with tech, read sci-fi, and get excited/feel existential terror about space.
           I also like motorcycles, old-school tech, retro stuff from the early internet, and so on.
           (I also tend to have a screwdriver of some sort on me most of the time.)<br /><br />
           In the meantime, if you'd like to know more about me, you can check out my linkedin, or twitter, or something. 
           It's the age of the internet, I don't need to tell most of you how to find me, do I? 😉
-          I do sometimes blog <a href="https://essnine.dev/blog" target="_blank">here</a>. 
-          And if for some reason, you feel like pinging me the old school way, you can always <a href="mailto:surajzala12@gmail.com">email</a> me.<br /><br />
+          I do sometimes blog <a href="https://essnine.dev/blog" target="_blank">here, although I think the site's going to be down for development for a bit.</a>. 
+          And if for some reason, you feel like pinging me the old school way, you can always email me at surajzala12[at]gmail[dot]com.<br /><br />
           Have a good day!
         </p>
       </div>
@@ -57,30 +54,13 @@
   <footer class="footer" id="footer">
     <div class="flex-container footerMaster" id="footerMaster">
       <div class="flex-container footerSocialBox" id="footerSocialBox">
-        <!-- <div class="flex-item footerText">         
         <p id="footerText">
           This is a basic website. Nothing fancy, just getting it done.
         </p>
         </div> -->
-        <!-- <div class="flex-item faviconSocial"> -->
           <a class="faviconLink" href="https://twitter.com/surajzala?lang=en" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-        <!-- </div> -->
-        <!-- <div class="flex-item faviconSocial"> -->
           <a class="faviconLink" href="https://essnine.dev/blog" target="_blank"><i class="fa fa-tumblr" aria-hidden="true"></i></a>
-        <!-- </div><div class="flex-item faviconSocial"> -->
           <a class="faviconLink" href="https://github.com/essnine" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-        <!-- </div> -->
-      </div>
-      <div class="flex-container footerDarkMode">
-        <div class="flex-item toggleDarkMode" title="I store no cookies. The night mode toggle is basic JS time checking. This site is mostly built from scratch.">
-          <label class="toggleDarkText" id="toggleButtonLabel">
-            🌞&nbsp
-          </label>
-          <label class="switch">
-            <input type="checkbox" onclick="goDark(true)" id="goDarkToggle">
-            <span class="slider round"></span>
-          </label>
-        </div>
       </div>
     </div>
   </footer>
