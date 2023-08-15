@@ -95,7 +95,7 @@ function setAffirmation() {
         var affirmationList = affirmationData.affirmations;
         let affirmationIndex = affirmationList.length;
         let affirmationText = affirmationList[getRandomInt(affirmationIndex)];
-        document.getElementById("affirmationBox").innerText = affirmationText
+        document.getElementById("affirmationBox").ariaValueText = affirmationText
     })
 }
 
